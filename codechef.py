@@ -47,9 +47,9 @@ def CreateBankAcc():
         print("\n\nFill the form :\n")
         login_id = input('Login id : ')
         if login_id in data:
-            print("\nLogin id already exist [press enter]")
-            return
-        password = input('Login id : ')
+            input("\nLogin id already exist [press enter]")
+            continue
+        password = input('Password : ')
         name = input('Name : ')
         acc_no = int(input('acc_no : '))
         bal = int(input('Enter the initial deposit amount : Rs.'))
@@ -61,8 +61,9 @@ def CreateBankAcc():
             'acc_no': acc_no,
             'balance': bal
         }
-        send_data(data[id], 1)
+        send_data(data[login_id], 1)
         input("\nAccount creation success [press enter]")
+        break
 
 
 def LoginPage():
